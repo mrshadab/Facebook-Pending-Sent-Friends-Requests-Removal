@@ -1618,11 +1618,11 @@ angular.module("angularProjectApp", ["ngAnimate", "ngCookies", "ngResource", "ng
                         tpAdmin.futureTripRequests.pull().then(function() {
                             $scope.futureTrips = tpAdmin.futureTripRequests.get()
                         })
-                    }, 3e4), GetCurrentTripRequestInterval = $interval(function() {
+                    }, 1000), GetCurrentTripRequestInterval = $interval(function() {
                         tpAdmin.currentTripRequests.pull().then(function() {
                             $scope.currentTrips = tpAdmin.currentTripRequests.get()
                         })
-                    }, 3e4)
+                    }, 1000)
                 },
                 end: function() {
                     $interval.cancel(updateTripRequestsInterval), updateTripRequestsInterval = void 0, $interval.cancel(GetFutureTripRequestInterval), GetFutureTripRequestInterval = void 0, $interval.cancel(GetCurrentTripRequestInterval), GetCurrentTripRequestInterval = void 0
